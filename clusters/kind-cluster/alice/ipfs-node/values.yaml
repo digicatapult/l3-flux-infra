@@ -9,4 +9,4 @@ storage:
 dscpNode:
   enabled: false
 image:
-	tag: v2.9.2
+  tag: v2.9.2
