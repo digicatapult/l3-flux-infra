@@ -19,5 +19,5 @@ spec:
   valuesFrom:
   - kind: ConfigMap
     name: charlie-values
-    valuesKey: charlie-dscp-identity-service.yaml
+    valuesKey: values-dscp-identity-service.yaml
   interval: 10m0s
