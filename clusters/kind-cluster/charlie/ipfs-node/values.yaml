@@ -1,0 +1,11 @@
+config:
+  nodeHost: charlie-node-dscp-node-0
+  nodePort: 9944
+  privateKey: CAESQIFPixpCE7ClA8BDZdcZFEZwpm23YUODgRJDTtr+JQ89UmwIC+FFZriaGKywT3S4n+ZeGGoEKG6swHHj71IaC7Y=
+  publicKey: 112D3KooWFN79HEKn584bJUgNV5hDf7UpjqWGioS8vf9caqS2CF4h
+  ipfsBootNodeAddress: /dns4/alice-ipfs-dscp-ipfs-swarm.alice.svc.cluster.local/tcp/4001/p2p/12D3KooWGnnDccXt956NhFkUki48216AwogbfWTcN33mjinFkNNT
+storage:
+  storageClass: standard
+  dataVolumeSize: 1
+dscpNode:
+  enabled: false

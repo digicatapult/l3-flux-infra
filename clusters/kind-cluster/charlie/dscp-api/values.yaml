@@ -1,0 +1,15 @@
+config:
+  logLevel: info
+  externalNodeHost: charlie-node-dscp-node-0
+  externalIpfsHost: charlie-ipfs-dscp-ipfs-api
+  externalIpfsPort: 5001
+  accountKey: //Bob
+  externalOrigin: "http://localhost:3080"
+  externalPathPrefix: "charlie/dscp-api"
+ingress:
+  paths:
+    - "/charlie/dscp-api/(.*)"
+dscpIpfs:
+  enabled: false
+dscpNode:
+  enabled: false

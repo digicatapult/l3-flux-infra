@@ -1,0 +1,11 @@
+config:
+  logLevel: info
+  selfAddress: 12D3KooWSCufgHzV4fCwRijfH2k3abrpAJxTKxEvN1FDuRXA2U9x
+  externalNodeHost: charlie-node-dscp-node-0
+  externalOrigin: "http://localhost:3080"
+  externalPathPrefix: "charlie/dscp-identity-service"
+ingress:
+  paths:
+    - "/charlie/dscp-identity-service/(.*)"
+dscpNode:
+  enabled: false
