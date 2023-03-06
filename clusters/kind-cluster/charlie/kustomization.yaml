@@ -1,0 +1,20 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: charlie
+resources:
+  - source.yaml
+  - dscp-node
+  - dscp-identity-service
+  - ipfs-node
+  - dscp-api
+configMapGenerator:
+  - name: charlie-values
+    files:
+      - values-dscp-node.yaml=dscp-node/values.yaml
+      - values-dscp-ipfs.yaml=ipfs-node/values.yaml
+      - values-dscp-api.yaml=dscp-api/values.yaml
+      - values-dscp-identity-service.yaml=dscp-identity-service/values.yaml
+configurations:
+  - kustomize-config.yaml
+generatorOptions:
+  disableNameSuffixHash: true
