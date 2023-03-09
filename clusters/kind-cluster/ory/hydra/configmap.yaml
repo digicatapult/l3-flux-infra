@@ -13,12 +13,14 @@ data:
         - host: localhost
           paths:
           - path: /hydra-public/(.*)
+            pathType: ImplementationSpecific
         enabled: true
       admin:
         hosts:
         - host: localhost
           paths:
           - path: "/hydra-admin/(.*)"
+            pathType: ImplementationSpecific
         enabled: true
     maester:
       enabled: false
