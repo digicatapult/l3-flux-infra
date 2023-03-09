@@ -3,5 +3,3 @@ kind: Kustomization
 resources:
   - release.yaml
   - configmap.yaml
-  - ingress-hydra-admin.yaml
-  - ingress-hydra-public.yaml
