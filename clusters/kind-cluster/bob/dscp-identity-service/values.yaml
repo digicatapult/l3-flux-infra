@@ -5,6 +5,7 @@ config:
   externalOrigin: "http://localhost:3080"
   externalPathPrefix: "bob/dscp-identity-service"
 ingress:
+  host: localhost
   paths:
     - "/bob/dscp-identity-service/(.*)"
 dscpNode:

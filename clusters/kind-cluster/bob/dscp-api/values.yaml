@@ -7,6 +7,7 @@ config:
   externalOrigin: "http://localhost:3080"
   externalPathPrefix: "bob/dscp-api"
 ingress:
+  host: localhost
   paths:
     - "/bob/dscp-api/(.*)"
 dscpIpfs:

@@ -5,6 +5,7 @@ config:
   externalOrigin: "http://localhost:3080"
   externalPathPrefix: "alice/dscp-identity-service"
 ingress:
+  host: localhost
   paths:
     - "/alice/dscp-identity-service/(.*)"
 dscpNode:

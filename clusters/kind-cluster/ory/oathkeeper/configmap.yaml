@@ -52,6 +52,11 @@ data:
       proxy:
         enabled: false
       api:
-        enabled: false
+        enabled: true
+        hosts:
+        - host: localhost
+          paths:
+          - path: /oathkeeper/(.*)
+            pathType: ImplementationSpecific
     maester:
       enabled: false
