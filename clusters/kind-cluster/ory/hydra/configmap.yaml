@@ -9,10 +9,16 @@ data:
       hashSumEnabled: true
     ingress:
       public:
-        host: localhost
+        hosts:
+        - host: localhost
+          paths:
+          - path: /hydra-public/(.*)
         enabled: true
       admin:
-        host: localhost
+        hosts:
+        - host: localhost
+          paths:
+          - path: "/hydra-admin/(.*)"
         enabled: true
     maester:
       enabled: false
