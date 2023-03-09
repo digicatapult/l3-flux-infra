@@ -15,7 +15,7 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: bitnami
-				namespace: ory
+        namespace: ory
   interval: 1m
   valuesFrom:
     - kind: ConfigMap
