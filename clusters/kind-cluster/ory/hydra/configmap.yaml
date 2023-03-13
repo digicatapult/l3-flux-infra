@@ -16,7 +16,7 @@ data:
         hosts:
         - host: localhost
           paths:
-          - path: /hydra-public/(.*)
+          - path: "/hydra-public/(.*)"
             pathType: ImplementationSpecific
         enabled: true
       admin:

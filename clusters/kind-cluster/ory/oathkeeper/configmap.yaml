@@ -8,8 +8,6 @@ data:
     configmap:
       hashSumEnabled: true
     service:
-      proxy:
-        enabled: false
       api:
         port: 80
     oathkeeper:
@@ -21,8 +19,8 @@ data:
         serve:
           api:
             port: 4456
-          prometheus:
-            port: 9000
+          proxy:
+            port: 4455
         errors:
           fallback:
             - json
