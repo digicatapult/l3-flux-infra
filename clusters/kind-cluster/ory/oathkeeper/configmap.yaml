@@ -53,6 +53,10 @@ data:
         enabled: false
       api:
         enabled: true
+        annotations:
+          nginx.ingress.kubernetes.io/rewrite-target: /$1
+          nginx.ingress.kubernetes.io/use-regex: "true"
+          nginx.ingress.kubernetes.io/enable-global-auth: "false"
         hosts:
         - host: localhost
           paths:

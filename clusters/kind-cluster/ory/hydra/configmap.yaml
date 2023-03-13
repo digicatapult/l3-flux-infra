@@ -9,6 +9,10 @@ data:
       hashSumEnabled: true
     ingress:
       public:
+        annotations:
+          nginx.ingress.kubernetes.io/rewrite-target: /$1
+          nginx.ingress.kubernetes.io/use-regex: "true"
+          nginx.ingress.kubernetes.io/enable-global-auth: "false"
         hosts:
         - host: localhost
           paths:
@@ -16,6 +20,10 @@ data:
             pathType: ImplementationSpecific
         enabled: true
       admin:
+        annotations:
+          nginx.ingress.kubernetes.io/rewrite-target: /$1
+          nginx.ingress.kubernetes.io/use-regex: "true"
+          nginx.ingress.kubernetes.io/enable-global-auth: "false"
         hosts:
         - host: localhost
           paths:
