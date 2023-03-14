@@ -13,6 +13,8 @@ spec:
     - handler: oauth2_introspection
   authorizer:
     handler: allow
+  mutators:
+    - handler: noop
 ---
 apiVersion: oathkeeper.ory.sh/v1alpha1
 kind: Rule
