@@ -1,7 +1,7 @@
 config:
   logLevel: info
   externalNodeHost: bob-node-dscp-node-0
-  externalIpfsHost: bob-dscp-ipfs-api
+  externalIpfsHost: bob-ipfs-dscp-ipfs-api
   externalIpfsPort: 5001
   accountKey: //Bob
   externalOrigin: "http://localhost:3080"

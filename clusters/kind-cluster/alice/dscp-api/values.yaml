@@ -1,7 +1,7 @@
 config:
   logLevel: info
   externalNodeHost: alice-node-dscp-node-0
-  externalIpfsHost: alice-dscp-ipfs-api
+  externalIpfsHost: alice-ipfs-dscp-ipfs-api
   externalIpfsPort: 5001
   accountKey: //Alice
   externalOrigin: "http://localhost:3080"
