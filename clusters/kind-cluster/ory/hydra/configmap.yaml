@@ -44,7 +44,9 @@ data:
           refresh_token: 720h
           id_token: 168h
         urls:
+          admin: http://hydra-admin:4445/
           self:
+            admin: http://hydra-admin:4445/
             issuer: http://localhost:3080/api/
           consent: http://localhost:3080/consent/
         secrets:
