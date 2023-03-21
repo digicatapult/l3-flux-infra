@@ -4,6 +4,7 @@ config:
   externalNodeHost: bob-node-dscp-node-0
   externalOrigin: "http://localhost:3080"
   externalPathPrefix: "bob/dscp-identity-service"
+  authType: "EXTERNAL"
 ingress:
   host: localhost
   paths:
