@@ -6,10 +6,13 @@ config:
   accountKey: //Bob
   externalOrigin: "http://localhost:3080"
   externalPathPrefix: "charlie/dscp-api"
+  auth:
+    type: EXTERNAL
 ingress:
+  host: localhost
   paths:
     - "/charlie/dscp-api/(.*)"
-dscpIpfs:
+ipfs:
   enabled: false
-dscpNode:
+node:
   enabled: false
