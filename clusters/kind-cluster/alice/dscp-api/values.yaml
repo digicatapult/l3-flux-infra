@@ -6,7 +6,8 @@ config:
   accountKey: //Alice
   externalOrigin: "http://localhost:3080"
   externalPathPrefix: "alice/dscp-api"
-  authType: EXTERNAL
+  auth:
+    type: EXTERNAL
 ingress:
   host: localhost
   paths:
