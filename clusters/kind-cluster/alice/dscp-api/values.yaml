@@ -6,14 +6,14 @@ config:
   accountKey: //Alice
   externalOrigin: "http://localhost:3080"
   externalPathPrefix: "alice/dscp-api"
-  authType: "EXTERNAL"
+  authType: EXTERNAL
 ingress:
   host: localhost
   paths:
     - "/alice/dscp-api/(.*)"
   annotations:
     nginx.ingress.kubernetes.io/use-regex: "true"
-dscpIpfs:
+ipfs:
   enabled: false
-dscpNode:
+node:
   enabled: false

@@ -4,7 +4,7 @@ config:
   externalNodeHost: alice-node-dscp-node-0
   externalOrigin: "http://localhost:3080"
   externalPathPrefix: "alice/dscp-identity-service"
-  authType: "EXTERNAL"
+  authType: EXTERNAL
 ingress:
   host: localhost
   paths:
