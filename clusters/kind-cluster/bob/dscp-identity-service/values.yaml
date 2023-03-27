@@ -7,7 +7,7 @@ externalOrigin: "http://localhost:3080"
 externalPathPrefix: "bob/dscp-identity-service"
 authType: EXTERNAL
 ingress:
-  host: localhost
+  hostname: localhost
   paths:
     - path: "/bob/dscp-identity-service/(.*)"
       pathType: Prefix
