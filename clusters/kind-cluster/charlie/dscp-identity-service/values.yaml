@@ -1,14 +1,15 @@
-config:
-  logLevel: info
-  selfAddress: 12D3KooWSCufgHzV4fCwRijfH2k3abrpAJxTKxEvN1FDuRXA2U9x
-  externalNodeHost: charlie-node-dscp-node-0
-  externalOrigin: "http://localhost:3080"
-  externalPathPrefix: "charlie/dscp-identity-service"
-  auth:
-    type: EXTERNAL
+logLevel: info
+selfAddress: 12D3KooWSCufgHzV4fCwRijfH2k3abrpAJxTKxEvN1FDuRXA2U9x
+externalDscpNode:
+  host: charlie-node-dscp-node-0
+  port: 9944
+externalOrigin: "http://localhost:3080"
+externalPathPrefix: "charlie/dscp-identity-service"
+authType: EXTERNAL
 ingress:
-  host: localhost
+  hostname: localhost
   paths:
-    - "/charlie/dscp-identity-service/(.*)"
-dscpNode:
+    - path: "/charlie/dscp-identity-service/(.*)"
+      pathType: Prefix
+node:
   enabled: false
