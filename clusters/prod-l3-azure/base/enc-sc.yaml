@@ -8,7 +8,7 @@ metadata:
 parameters:
   skuname: StandardSSD_LRS
   diskEncryptionType: EncryptionAtRestWithCustomerKey
-  diskEncryptionSetID: /subscriptions/a8b51d77-6ba7-4a44-8361-f4dbac41f6c3/resourceGroups/L3-K8S-Prod/providers/Microsoft.Compute/diskEncryptionSets/l3-encrypted
+  diskEncryptionSetID: /subscriptions/a8b51d77-6ba7-4a44-8361-f4dbac41f6c3/resourceGroups/az-k8s-8a59-rg/providers/Microsoft.Compute/diskEncryptionSets/l3-encrypted
   resourceGroup: az-k8s-8a59-rg
 provisioner: disk.csi.azure.com
 allowVolumeExpansion: true
