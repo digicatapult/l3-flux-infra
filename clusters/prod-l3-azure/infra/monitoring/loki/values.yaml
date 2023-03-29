@@ -1,0 +1,5 @@
+loki:
+  persistence:
+    enabled: true
+    storageClassName: enc-managed-csi
+    size: 50Gi
