@@ -7,3 +7,13 @@ grafana:
     hosts:
     - monitoring.dsch-l3.com
     ingressClassName: nginx-monitoring
+  additionalDataSources:
+  - name: Loki
+    type: loki
+    access: proxy
+    url: http://loki.monitoring.svc.cluster.local:3100
+    version: 1
+    editable: false
+    jsonData:
+      httpMethod: GET
+      tlsSkipVerify: true
