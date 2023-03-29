@@ -7,5 +7,3 @@ grafana:
     hosts:
     - monitoring.dsch-l3.com
     ingressClassName: nginx-monitoring
-prometheus:
-  enabled: false
