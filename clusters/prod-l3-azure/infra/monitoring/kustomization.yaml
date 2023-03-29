@@ -5,11 +5,11 @@ resources:
   - source.yaml
   - prometheus
   - prometheus.yaml
-  # - loki
+  - loki
 configMapGenerator:
   - name: monitoring-values
     files:
-      # - values-loki.yaml=loki/values.yaml
+      - values-loki.yaml=loki/values.yaml
       - values-prometheus.yaml=prometheus/values.yaml
 configurations:
   - kustomize-config.yaml
