@@ -4,6 +4,7 @@ namespace: monitoring
 resources:
   - source.yaml
   - prometheus
+  - prometheus.yaml
   # - loki
 configMapGenerator:
   - name: monitoring-values
