@@ -12,8 +12,8 @@ grafana:
     type: loki
     access: proxy
     url: http://loki.monitoring.svc.cluster.local:3100
-    version: 1
     editable: false
+    isDefault: false
     jsonData:
       httpMethod: GET
       tlsSkipVerify: true
