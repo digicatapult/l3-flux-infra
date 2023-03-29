@@ -7,7 +7,3 @@ grafana:
     hosts:
     - monitoring.dsch-l3.com
     ingressClassName: nginx-monitoring
-    tls:
-    - hosts:
-      - monitoring.dsch-l3.com
-      secretName: aks-grafana
