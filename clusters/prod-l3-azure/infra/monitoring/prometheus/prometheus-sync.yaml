@@ -6,7 +6,7 @@ metadata:
   namespace: monitoring
 spec:
   interval: 1m0s
-  path: ./clusters/prod-l3-azure/infra/prometheus/instance
+  path: ./clusters/prod-l3-azure/infra/monitoring/prometheus/instance
   prune: true
   dependsOn:
     - name: monitoring-sync
