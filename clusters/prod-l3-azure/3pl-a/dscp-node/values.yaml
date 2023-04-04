@@ -1,0 +1,27 @@
+node:
+  chain: l3-prod
+  role: validator
+  dataVolumeSize: 40Gi
+  perNodeServices:
+    setPublicAddressToExternal:
+      enabled: false
+  keys:
+    - type: aura
+      scheme: sr25519
+    - type: gran
+      scheme: ed25519
+  flags:
+    - "--rpc-external"
+    - "--ws-external"
+    - "--rpc-methods=Unsafe"
+    - "--rpc-cors=all"
+    - "--unsafe-ws-external"
+    - "--unsafe-rpc-external"
+    - "--prometheus-external"
+  serviceMonitor:
+    enabled: true
+  enableStartupProbe: false
+  enableReadinessProbe: false
+storageClass: enc-managed-csi
+image:
+  tag: v5.0.4
