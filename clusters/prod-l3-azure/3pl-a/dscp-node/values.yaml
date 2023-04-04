@@ -20,8 +20,8 @@ node:
     - "--prometheus-external"
   serviceMonitor:
     enabled: true
-  enableStartupProbe: false
-  enableReadinessProbe: false
+  enableStartupProbe: true
+  enableReadinessProbe: true
 storageClass: enc-managed-csi
 image:
   tag: v5.0.4
