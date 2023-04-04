@@ -1,0 +1,28 @@
+node:
+  chain: l3-prod
+  role: validator
+  dataVolumeSize: 40Gi
+  perNodeServices:
+    setPublicAddressToExternal:
+      enabled: false
+  keys:
+    - type: aura
+      scheme: sr25519
+    - type: gran
+      scheme: ed25519
+  flags:
+    - "--rpc-external"
+    - "--ws-external"
+    - "--rpc-methods=Unsafe"
+    - "--rpc-cors=all"
+    - "--unsafe-ws-external"
+    - "--unsafe-rpc-external"
+    - "--prometheus-external"
+    - "--bootnodes '/dns4/node-3pl-a-dscp-node-0-rc-p2p.3pl-a.svc.cluster.local/tcp/30333/p2p/12D3KooWQH73pDtq478rBnJ7BaQkMT7MDMs2b67VB1dBRaXW7r77'"
+  serviceMonitor:
+    enabled: true
+  enableStartupProbe: false
+  enableReadinessProbe: false
+storageClass: enc-managed-csi
+image:
+  tag: v5.0.4
