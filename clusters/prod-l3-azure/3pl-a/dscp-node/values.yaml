@@ -20,7 +20,6 @@ node:
     - "--prometheus-external"
   serviceMonitor:
     enabled: true
-    namespace: monitoring
   enableStartupProbe: false
   enableReadinessProbe: false
 storageClass: enc-managed-csi
