@@ -2,7 +2,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: 3pl-a-node
+  name: node-3pl-a
   namespace: 3pl-a
 spec:
   install:
