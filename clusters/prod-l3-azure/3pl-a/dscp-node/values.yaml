@@ -24,4 +24,4 @@ node:
   enableReadinessProbe: true
 storageClass: enc-managed-csi
 image:
-  tag: v5.0.4
+  tag: v5.0.5
