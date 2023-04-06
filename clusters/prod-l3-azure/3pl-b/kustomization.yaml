@@ -4,10 +4,12 @@ namespace: 3pl-b
 resources:
   - source.yaml
   - dscp-node
+  - dscp-ipfs
 configMapGenerator:
   - name: 3pl-b-values
     files:
       - values-dscp-node.yaml=dscp-node/values.yaml
+      - values-dscp-ipfs.yaml=dscp-ipfs/values.yaml
 configurations:
   - kustomize-config.yaml
 generatorOptions:
