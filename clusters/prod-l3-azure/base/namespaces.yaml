@@ -6,3 +6,26 @@ metadata:
     app.kubernetes.io/version: latest
   name: monitoring
 ---
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    app.kubernetes.io/instance: dscp
+    app.kubernetes.io/version: latest
+  name: 3pl-a
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    app.kubernetes.io/instance: dscp
+    app.kubernetes.io/version: latest
+  name: 3pl-b
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    app.kubernetes.io/instance: dscp
+    app.kubernetes.io/version: latest
+  name: optimiser

@@ -1,0 +1,17 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: 3pl-a-sync
+  namespace: 3pl-a
+spec:
+  interval: 1m0s
+  path: ./clusters/prod-l3-azure/3pl-a
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+    namespace: flux-system
+  dependsOn:
+    - name: secrets
+      namespace: flux-system

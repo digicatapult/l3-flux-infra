@@ -104,17 +104,16 @@ As mentioned in [managing secrets](./managing-secrets.md) we encrypt the secrets
 Run the following commands to generate a PGP key
 
 ```
-mktemp -d -t .dscp-cluster-gpg
+mktemp -d -t .l3-cluster-gpg
 
-GNUPGHOME=.dscp-cluster-gpg gpg \
---quick-gen-key --batch \
---passphrase '' --yes <cluster-name>
+GNUPGHOME=.l3-cluster-gpg gpg \
+--quick-gen-key "prod-l3-azure" default default never
 ```
 Export the public key as a certificate into the certs directory
 ```
 mkdir certs/<cluster-name>
 
-GNUPGHOME=.dscp-cluster-gpg gpg \
+GNUPGHOME=.l3-cluster-gpg gpg \
 --output certs/<cluster-name>/<cluster-name>.asc \
 --export --armor <cluster-name>
 ```
@@ -122,7 +121,7 @@ Commit this and push it up to our branch.
 
 We now need to import this key into the cluster
 ```
-GNUPGHOME=.dscp-cluster-gpg gpg \
+GNUPGHOME=.l3-cluster-gpg gpg \
 --export-secret-keys \
 --armor <cluster-name> \
 | kubectl create secret generic sops-gpg \
@@ -157,9 +156,9 @@ The described script allows for generating a new cluster with any number of desi
 
 ```
 ./scripts/make-new-cluster-genesis.sh \
-    -o alice:ns1
-    -o bob:ns2
-    -o charlie:ns3
+    -o alice:ns1:10000000
+    -o bob:ns2:10000000
+    -o charlie:ns3:10000000
     -v red:ns1:alice \
     -v green:ns2:bob \
     -v blue:ns3:charlie \
@@ -170,7 +169,7 @@ The described script allows for generating a new cluster with any number of desi
     new-cluster > new-cluster.json
 ```
 
-would create a genesis for a new cluster called `new-cluster`. Three accounts `alice`, `bob` and `charlie` would be created in the namespaces `ns1`, `ns2` and `ns3` respectively. Three validator nodes called `red`, `green` and `blue` would be created in namespaces `ns1`, `ns2` and `ns3` and with owners `alice`, `bob` and `charlie` respectively. Two additional nodes (`bootnode` and `api-light`) would be created in `ns1` and owned by `alice`. Finally namespaces `ns2` and `ns3` would both contain an additional node called `api-light` owned by `bob` and `charlie` respectively.
+would create a genesis for a new cluster called `new-cluster`. Three accounts `alice`, `bob` and `charlie` would be created in the namespaces `ns1`, `ns2` and `ns3` respectively with a balance of `1000000`. Three validator nodes called `red`, `green` and `blue` would be created in namespaces `ns1`, `ns2` and `ns3` and with owners `alice`, `bob` and `charlie` respectively. Two additional nodes (`bootnode` and `api-light`) would be created in `ns1` and owned by `alice`. Finally namespaces `ns2` and `ns3` would both contain an additional node called `api-light` owned by `bob` and `charlie` respectively.
 
 Additional options may be specified to configure the docker image used to generate the genesis (defaults to `digicatapult/dscp-node:latest`) and the kubernetes namespace secrets should be created in (defaults to `dscp`). The script writes the final raw genesis file to stdout so can be safely redirected. This should then either be hosted publicly or built into the node to be deployed so that the chain can be referenced.
 
