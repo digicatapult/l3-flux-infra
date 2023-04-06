@@ -1,0 +1,15 @@
+logLevel: info
+selfAddress: 5GuU4dtu3d9nox95eU9B7jErvGpHD9Bq16VBJnVN3KKBBXZg
+externalDscpNode:
+  host: node-optimiser-dscp-node-0
+  port: 9944
+externalOrigin: "https://optimiser.dsch-l3.com"
+authType: EXTERNAL
+ingress:
+  hostname: optimiser.dsch-l3.com
+node:
+  enabled: false
+postgresql:
+  persistence:
+    storageClass: enc-managed-csi
+    size: 1Gi
