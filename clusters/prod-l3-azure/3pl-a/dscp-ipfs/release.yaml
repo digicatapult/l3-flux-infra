@@ -1,0 +1,31 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: ipfs-3pl-a
+  namespace: 3pl-a
+spec:
+  install:
+    remediation:
+      retries: -1
+  dependsOn:
+    - name: node-3pl-a
+  chart:
+    spec:
+      chart: dscp-ipfs
+      sourceRef:
+        kind: HelmRepository
+        name: digicatapult
+  valuesFrom:
+  - kind: ConfigMap
+    name: 3pl-a-values
+    valuesKey: values-dscp-ipfs.yaml
+  - kind: Secret
+    name: 3pl-a-ipfs
+    valuesKey: publicKey
+    targetPath: ipfs.publicKey
+  - kind: Secret
+    name: 3pl-a-ipfs
+    valuesKey: privateKey
+    targetPath: ipfs.privateKey
+  interval: 10m
