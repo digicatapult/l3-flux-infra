@@ -20,7 +20,7 @@ spec:
     - server auth
     - client auth
   dnsNames:
-    - ouath2.dsch-l3.com
+    - oauth2.dsch-l3.com
   issuerRef:
     name: letsencrypt-prod
     kind: ClusterIssuer
