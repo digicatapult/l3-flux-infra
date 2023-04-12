@@ -1,0 +1,20 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - hydra
+  - oathkeeper-maester
+  - postgresql
+  - nginx
+  - source.yaml
+  - oathkeeper-sync.yaml
+configMapGenerator:
+  - name: ory-values
+    files:
+      - values-hydra.yaml=hydra/values.yaml
+      - values-oathkeeper.yaml=oathkeeper/values.yaml
+      - values-postgresql.yaml=postgresql/values.yaml
+      - values-nginx.yaml=nginx/values.yaml
+configurations:
+  - kustomize-config.yaml
+generatorOptions:
+  disableNameSuffixHash: true

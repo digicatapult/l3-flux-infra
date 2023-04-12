@@ -1,0 +1,44 @@
+configmap:
+  hashSumEnabled: true
+ingress:
+  public:
+    className: nginx-ory
+    annotations:
+      nginx.ingress.kubernetes.io/rewrite-target: /$1
+      nginx.ingress.kubernetes.io/use-regex: "true"
+      nginx.ingress.kubernetes.io/enable-global-auth: "false"
+    hosts:
+    - host: oauth2.dsch-l3.com
+      paths:
+      - path: "/public/(.*)"
+        pathType: ImplementationSpecific
+    enabled: true
+  admin:
+    className: nginx-ory
+    annotations:
+      nginx.ingress.kubernetes.io/rewrite-target: /$1
+      nginx.ingress.kubernetes.io/use-regex: "true"
+    hosts:
+    - host: oauth2.dsch-l3.com
+      paths:
+      - path: "/admin/(.*)"
+        pathType: ImplementationSpecific
+    enabled: true
+maester:
+  enabled: false
+hydra:
+  automigration:
+    enabled: true
+  config:
+    ttl:
+      access_token: 168h
+      refresh_token: -1
+      id_token: 168h
+    urls:
+      self:
+        admin: https://oauth2.dsch-l3.com/admin/
+        issuer: https://oauth2.dsch-l3.com/public/
+        public: https://oauth2.dsch-l3.com/public/
+      consent: https://oauth2.dsch-l3.com/consent/
+      login: https://oauth2.dsch-l3.com/login/
+      logout: https://oauth2.dsch-l3.com/logout/
