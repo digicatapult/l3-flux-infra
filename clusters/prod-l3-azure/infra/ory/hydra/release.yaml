@@ -27,8 +27,8 @@ spec:
     - kind: Secret
       name: hydra-secrets
       valuesKey: postgresDSN
-      targetPath: config.dsn
+      targetPath: hydra.config.dsn
     - kind: Secret
       name: hydra-secrets
       valuesKey: systemSecret
-      targetPath: config.system.secret
+      targetPath: hydra.config.system.secret
