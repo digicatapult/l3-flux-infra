@@ -31,4 +31,4 @@ spec:
     - kind: Secret
       name: hydra-secrets
       valuesKey: systemSecret
-      targetPath: hydra.config.system.secret[0]
+      targetPath: hydra.config.secrets.system[0]
