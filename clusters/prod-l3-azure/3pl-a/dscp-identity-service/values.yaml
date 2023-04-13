@@ -7,7 +7,9 @@ externalOrigin: "https://3pl-a.dsch-l3.com"
 externalPathPrefix: "/identity"
 authType: EXTERNAL
 ingress:
-  className: nginx-3pl-a
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"
+  ingressClassName: nginx-3pl-a
   hostname: 3pl-a.dsch-l3.com
   paths:
     - path: "/identity/(.*)"

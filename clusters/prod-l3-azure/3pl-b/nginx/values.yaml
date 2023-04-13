@@ -4,6 +4,8 @@ scope:
 ingressClassResource:
   name: nginx-3pl-b
   default: false
+config:
+    global-auth-url: "http://oathkeeper-api.ory.svc.cluster.local/decisions$request_uri"
 service:
   type: LoadBalancer
   annotations: 

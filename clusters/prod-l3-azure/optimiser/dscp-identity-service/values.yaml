@@ -7,7 +7,9 @@ externalOrigin: "https://optimiser.dsch-l3.com"
 externalPathPrefix: "/identity"
 authType: EXTERNAL
 ingress:
-  className: nginx-optimiser
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"
+  ingressClassName: nginx-optimiser
   hostname: optimiser.dsch-l3.com
   paths:
     - path: "/identity/(.*)"
