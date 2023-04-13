@@ -1,4 +1,4 @@
-logLevel: debug
+logLevel: trace
 selfAddress: 5E1qGsfiQo62EYYKo86Lf9sALgcWN8jJJvnywaY3eNrkTaut
 externalDscpNode:
   host: node-3pl-a-dscp-node-0
