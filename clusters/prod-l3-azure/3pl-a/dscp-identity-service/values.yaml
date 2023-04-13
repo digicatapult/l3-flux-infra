@@ -3,7 +3,7 @@ selfAddress: 5E1qGsfiQo62EYYKo86Lf9sALgcWN8jJJvnywaY3eNrkTaut
 externalDscpNode:
   host: node-3pl-a-dscp-node-0
   port: 9944
-externalOrigin: "https://3pl-a.dsch-l3.com"
+externalOrigin: "https://3pl-a.dsch-l3.com/identity"
 authType: EXTERNAL
 apiVersion: v1
 ingress:
