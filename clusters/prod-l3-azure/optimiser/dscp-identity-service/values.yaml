@@ -6,6 +6,7 @@ externalDscpNode:
 externalOrigin: "https://optimiser.dsch-l3.com"
 externalPathPrefix: "identity"
 authType: EXTERNAL
+apiVersion: v1
 ingress:
   annotations:
     nginx.ingress.kubernetes.io/use-regex: "true"
