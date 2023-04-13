@@ -4,7 +4,6 @@ externalDscpNode:
   host: node-3pl-a-dscp-node-0
   port: 9944
 externalOrigin: "https://3pl-a.dsch-l3.com"
-externalPathPrefix: "identity"
 authType: EXTERNAL
 apiVersion: v1
 ingress:
