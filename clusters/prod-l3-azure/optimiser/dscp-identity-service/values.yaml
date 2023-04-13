@@ -4,9 +4,14 @@ externalDscpNode:
   host: node-optimiser-dscp-node-0
   port: 9944
 externalOrigin: "https://optimiser.dsch-l3.com"
+externalPathPrefix: "/identity"
 authType: EXTERNAL
 ingress:
+  className: nginx-optimiser
   hostname: optimiser.dsch-l3.com
+  paths:
+    - path: "/identity/(.*)"
+      pathType: Prefix
 node:
   enabled: false
 postgresql:

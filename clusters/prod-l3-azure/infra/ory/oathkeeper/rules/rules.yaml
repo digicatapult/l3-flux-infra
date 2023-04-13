@@ -5,10 +5,11 @@ metadata:
   namespace: ory
 spec:
   match:
-    url: <.*>/<alice|bob|charlie>/<dscp-api|dscp-identity-service>/<v1|v3>/<(?!swagger|api-docs).*>
+    url: <.*>/<matchmaker|identity>/<v1|v3>/<(?!swagger|api-docs).*>
     methods:
       - GET
       - POST
+      - PUT
   authenticators:
     - handler: oauth2_introspection
       config:

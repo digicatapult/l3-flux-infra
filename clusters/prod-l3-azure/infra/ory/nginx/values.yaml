@@ -12,7 +12,7 @@ service:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     cert-manager.io/common-name: oauth2.dsch-l3.com
 config:
-  global-auth-url: "http://oathkeeper-api.ory.svc.cluster.local/decisions$request_uri"    
+  global-auth-url: "http://oathkeeper-api.ory.svc.cluster.local/decisions$request_uri"
 metrics:
   enabled: true
   serviceMonitor:

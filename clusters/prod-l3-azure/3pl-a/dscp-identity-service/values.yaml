@@ -4,9 +4,14 @@ externalDscpNode:
   host: node-3pl-a-dscp-node-0
   port: 9944
 externalOrigin: "https://3pl-a.dsch-l3.com"
+externalPathPrefix: "/identity"
 authType: EXTERNAL
 ingress:
+  className: nginx-3pl-a
   hostname: 3pl-a.dsch-l3.com
+  paths:
+    - path: "/identity/(.*)"
+      pathType: Prefix
 node:
   enabled: false
 postgresql:
