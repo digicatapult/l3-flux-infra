@@ -6,7 +6,7 @@ node:
     setPublicAddressToExternal:
       enabled: false
   keys:
-    - type: aura
+    - type: babe
       scheme: sr25519
     - type: gran
       scheme: ed25519

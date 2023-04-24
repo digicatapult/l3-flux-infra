@@ -24,7 +24,7 @@ spec:
     targetPath: node.customNodeKey
   - kind: Secret
     name: blue-keys
-    valuesKey: aura_seed
+    valuesKey: babe_seed
     targetPath: node.keys[0].seed
   - kind: Secret
     name: blue-keys
