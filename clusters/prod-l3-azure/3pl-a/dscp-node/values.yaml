@@ -6,7 +6,7 @@ node:
     setPublicAddressToExternal:
       enabled: false
   keys:
-    - type: babe
+    - type: aura
       scheme: sr25519
     - type: gran
       scheme: ed25519
@@ -24,4 +24,4 @@ node:
   enableReadinessProbe: true
 storageClass: enc-managed-csi
 image:
-  tag: v7.0.1
+  tag: v8.0.0

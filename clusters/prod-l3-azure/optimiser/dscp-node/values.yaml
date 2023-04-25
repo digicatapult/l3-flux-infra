@@ -6,7 +6,7 @@ node:
     setPublicAddressToExternal:
       enabled: false
   keys:
-    - type: babe
+    - type: aura
       scheme: sr25519
     - type: gran
       scheme: ed25519
@@ -18,11 +18,11 @@ node:
     - "--unsafe-ws-external"
     - "--unsafe-rpc-external"
     - "--prometheus-external"
-    - "--bootnodes '/dns4/node-3pl-a-dscp-node-0-rc-p2p.3pl-a.svc.cluster.local/tcp/30333/p2p/12D3KooWNTWeC3iYVQfUrusQWUXpnPbRpxRpSZ2V9K1cvbbLfSnd'"
+    - "--bootnodes '/dns4/node-3pl-a-dscp-node-0-rc-p2p.3pl-a.svc.cluster.local/tcp/30333/p2p/12D3KooWNFPAiW78EeheYVVYuNXHFBNGZLVGFuf5BHCGBUmp28KU'"
   serviceMonitor:
     enabled: true
   enableStartupProbe: true
   enableReadinessProbe: true
 storageClass: enc-managed-csi
 image:
-  tag: v7.0.1
+  tag: v8.0.0

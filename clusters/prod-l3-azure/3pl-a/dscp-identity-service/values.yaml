@@ -1,5 +1,5 @@
 logLevel: trace
-selfAddress: 5GUNKMhgabNPDSJnVosU1Qt5ZuR9LUS78Pnt54UTGn15q3cy
+selfAddress: 5E1qGsfiQo62EYYKo86Lf9sALgcWN8jJJvnywaY3eNrkTaut
 externalDscpNode:
   host: node-3pl-a-dscp-node-0
   port: 9944
@@ -18,8 +18,9 @@ ingress:
 node:
   enabled: false
 postgresql:
-  persistence:
-    storageClass: enc-managed-csi
-    size: 1Gi
+  primary:
+    persistence:
+      storageClass: enc-managed-csi
+      size: 1Gi
 image:
   tag: v1.8.26
