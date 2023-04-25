@@ -24,4 +24,4 @@ postgresql:
       storageClass: enc-managed-csi
       size: 1Gi
 image:
-  tag: v1.8.26
+  tag: v1.8.27
