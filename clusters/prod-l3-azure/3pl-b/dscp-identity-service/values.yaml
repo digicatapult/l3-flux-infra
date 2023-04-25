@@ -1,5 +1,5 @@
 logLevel: info
-selfAddress: 5H9KATdvPSzdw5oCkXD2HoJ3Qx9voD5eRsmME33HMmeWPsVa
+selfAddress: 5E26Rk7TMVDfYQbk1QwbWxzGdfCagrhuYvayjZRtMX8HvjP1
 externalDscpNode:
   host: node-3pl-b-dscp-node-0
   port: 9944
@@ -22,3 +22,5 @@ postgresql:
   persistence:
     storageClass: enc-managed-csi
     size: 1Gi
+image:
+  tag: v1.8.26
