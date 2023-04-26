@@ -36,7 +36,7 @@ hydra:
       id_token: 168h
     urls:
       self:
-        admin: https://oauth2.dsch-l3.com/admin/
+        admin: https://oauth2.dsch-l3.com/
         issuer: https://oauth2.dsch-l3.com/public/
         public: https://oauth2.dsch-l3.com/public/
       consent: https://oauth2.dsch-l3.com/consent/
