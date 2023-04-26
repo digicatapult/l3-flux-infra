@@ -18,6 +18,7 @@ ingress:
     annotations:
       nginx.ingress.kubernetes.io/rewrite-target: /$1
       nginx.ingress.kubernetes.io/use-regex: "true"
+      nginx.ingress.kubernetes.io/enable-global-auth: "false"
     hosts:
     - host: oauth2.dsch-l3.com
       paths:
@@ -36,7 +37,7 @@ hydra:
       id_token: 168h
     urls:
       self:
-        admin: https://oauth2.dsch-l3.com/
+        admin: https://oauth2.dsch-l3.com/admin/
         issuer: https://oauth2.dsch-l3.com/public/
         public: https://oauth2.dsch-l3.com/public/
       consent: https://oauth2.dsch-l3.com/consent/
