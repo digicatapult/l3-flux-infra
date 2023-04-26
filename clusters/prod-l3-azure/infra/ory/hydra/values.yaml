@@ -18,6 +18,7 @@ ingress:
     annotations:
       nginx.ingress.kubernetes.io/rewrite-target: /$1
       nginx.ingress.kubernetes.io/use-regex: "true"
+      nginx.ingress.kubernetes.io/enable-global-auth: "false"
     hosts:
     - host: oauth2.dsch-l3.com
       paths:
