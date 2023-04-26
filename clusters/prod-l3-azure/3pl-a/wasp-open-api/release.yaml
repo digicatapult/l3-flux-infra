@@ -9,7 +9,7 @@ spec:
     remediation:
       retries: -1
   dependsOn:
-    - name: dscp-identity-service
+    - name: identity-service-3pl-a
   chart:
     spec:
       chart: wasp-open-api
