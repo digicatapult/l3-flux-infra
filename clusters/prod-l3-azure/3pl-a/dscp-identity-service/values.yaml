@@ -7,6 +7,11 @@ authType: EXTERNAL
 ingress:
   ingressClassName: nginx-3pl-a
   hostname: 3pl-a.dsch-l3.com
+  paths:
+    - path: "/v1/members"
+      pathType: Prefix
+    - path: "/v1/self"
+      pathType: Prefix
 node:
   enabled: false
 postgresql:
