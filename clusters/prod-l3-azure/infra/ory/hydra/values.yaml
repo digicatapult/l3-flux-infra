@@ -11,7 +11,7 @@ ingress:
     - host: oauth2.dsch-l3.com
       paths:
       - path: "/public/(.*)"
-        pathType: ImplementationSpecific
+        pathType: Prefix
     enabled: true
   admin:
     className: nginx-ory
@@ -23,7 +23,7 @@ ingress:
     - host: oauth2.dsch-l3.com
       paths:
       - path: "/admin/(.*)"
-        pathType: ImplementationSpecific
+        pathType: Prefix
     enabled: true
 maester:
   enabled: false
