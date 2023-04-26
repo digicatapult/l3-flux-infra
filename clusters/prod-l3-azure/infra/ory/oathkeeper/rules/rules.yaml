@@ -5,7 +5,7 @@ metadata:
   namespace: ory
 spec:
   match:
-    url: <.*>/<v1>/<(?!swagger|api-docs).*>
+    url: <.*>/<v1|admin>/<(?!swagger|api-docs).*>
     methods:
       - GET
       - POST
