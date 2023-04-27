@@ -18,6 +18,6 @@ spec:
         name: digicatapult
   valuesFrom:
   - kind: ConfigMap
-    name: 3pl-bs-values
+    name: 3pl-b-values
     valuesKey: values-wasp-open-api.yaml
   interval: 10m0s
