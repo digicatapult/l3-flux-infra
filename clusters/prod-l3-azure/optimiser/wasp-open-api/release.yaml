@@ -1,0 +1,23 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: openapi-optimiser
+  namespace: optimiser
+spec:
+  install:
+    remediation:
+      retries: -1
+  dependsOn:
+    - name: identity-service-optimiser
+  chart:
+    spec:
+      chart: wasp-open-api
+      sourceRef:
+        kind: HelmRepository
+        name: digicatapult
+  valuesFrom:
+  - kind: ConfigMap
+    name: optimiser-values
+    valuesKey: values-wasp-open-api.yaml
+  interval: 10m0s

@@ -3,18 +3,14 @@ selfAddress: 5GuU4dtu3d9nox95eU9B7jErvGpHD9Bq16VBJnVN3KKBBXZg
 externalDscpNode:
   host: node-optimiser-dscp-node-0
   port: 9944
-externalOrigin: "https://optimiser.dsch-l3.com"
-externalPathPrefix: "identity"
 authType: EXTERNAL
-apiVersion: v1
 ingress:
-  annotations:
-    nginx.ingress.kubernetes.io/use-regex: "true"
-    nginx.ingress.kubernetes.io/rewrite-target: /$1
   ingressClassName: nginx-optimiser
   hostname: optimiser.dsch-l3.com
   paths:
-    - path: "/identity/(.*)"
+    - path: "/v1/members"
+      pathType: Prefix
+    - path: "/v1/self"
       pathType: Prefix
 node:
   enabled: false
@@ -24,4 +20,4 @@ postgresql:
       storageClass: enc-managed-csi
       size: 1Gi
 image:
-  tag: v1.8.27
+  tag: v1.8.29
