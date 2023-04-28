@@ -3,13 +3,21 @@ selfAddress: 5GuU4dtu3d9nox95eU9B7jErvGpHD9Bq16VBJnVN3KKBBXZg
 externalDscpNode:
   host: node-optimiser-dscp-node-0
   port: 9944
-externalOrigin: "https://optimiser.dsch-l3.com"
 authType: EXTERNAL
 ingress:
+  ingressClassName: nginx-optimiser
   hostname: optimiser.dsch-l3.com
+  paths:
+    - path: "/v1/members"
+      pathType: Prefix
+    - path: "/v1/self"
+      pathType: Prefix
 node:
   enabled: false
 postgresql:
-  persistence:
-    storageClass: enc-managed-csi
-    size: 1Gi
+  primary:
+    persistence:
+      storageClass: enc-managed-csi
+      size: 1Gi
+image:
+  tag: v1.8.29

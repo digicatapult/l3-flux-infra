@@ -1,0 +1,6 @@
+auth:
+  database: hydra
+primary:
+  persistence:
+    storageClass: enc-managed-csi
+    size: 5Gi  

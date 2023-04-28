@@ -3,13 +3,21 @@ selfAddress: 5H9KATdvPSzdw5oCkXD2HoJ3Qx9voD5eRsmME33HMmeWPsVa
 externalDscpNode:
   host: node-3pl-b-dscp-node-0
   port: 9944
-externalOrigin: "https://3pl-b.dsch-l3.com"
 authType: EXTERNAL
 ingress:
+  ingressClassName: nginx-3pl-b
   hostname: 3pl-b.dsch-l3.com
+  paths:
+    - path: "/v1/members"
+      pathType: Prefix
+    - path: "/v1/self"
+      pathType: Prefix
 node:
   enabled: false
 postgresql:
-  persistence:
-    storageClass: enc-managed-csi
-    size: 1Gi
+  primary:
+    persistence:
+      storageClass: enc-managed-csi
+      size: 1Gi
+image:
+  tag: v1.8.29

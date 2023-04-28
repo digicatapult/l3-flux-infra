@@ -1,0 +1,34 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: hydra
+  namespace: ory
+spec:
+  install:
+    remediation:
+      retries: -1
+  releaseName: hydra
+  chart:
+    spec:
+      chart: hydra
+      sourceRef:
+        kind: HelmRepository
+        name: ory
+  interval: 1m
+  dependsOn:
+    - name: postgresql
+  # Default values
+  # https://github.com/ory/k8s/blob/master/helm/charts/hydra/values.yaml
+  valuesFrom:
+    - kind: ConfigMap
+      name: ory-values
+      valuesKey: values-hydra.yaml
+    - kind: Secret
+      name: hydra-secrets
+      valuesKey: postgresDSN
+      targetPath: hydra.config.dsn
+    - kind: Secret
+      name: hydra-secrets
+      valuesKey: systemSecret
+      targetPath: hydra.config.secrets.system[0]

@@ -6,12 +6,16 @@ resources:
   - dscp-node
   - dscp-ipfs
   - dscp-identity-service
+  - nginx
+  - wasp-open-api
 configMapGenerator:
   - name: 3pl-b-values
     files:
       - values-dscp-node.yaml=dscp-node/values.yaml
       - values-dscp-ipfs.yaml=dscp-ipfs/values.yaml
       - values-dscp-identity-service.yaml=dscp-identity-service/values.yaml
+      - values-nginx.yaml=nginx/values.yaml
+      - values-wasp-open-api.yaml=wasp-open-api/values.yaml
 configurations:
   - kustomize-config.yaml
 generatorOptions:

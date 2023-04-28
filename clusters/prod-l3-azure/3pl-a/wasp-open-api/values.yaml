@@ -1,0 +1,8 @@
+logLevel: debug
+paths:
+  - http://identity-service-3pl-a-dscp-identity-service:3000/v1/api-docs
+baseUrl: https://3pl-a.dsch-l3.com/v1/
+openApiTitle: "3PL A Open API"
+ingress:
+  ingressClassName: nginx-3pl-a
+  hostname: 3pl-a.dsch-l3.com
