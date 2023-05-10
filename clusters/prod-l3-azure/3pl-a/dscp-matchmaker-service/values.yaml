@@ -1,0 +1,19 @@
+logLevel: debug
+userUri: 5E1qGsfiQo62EYYKo86Lf9sALgcWN8jJJvnywaY3eNrkTaut
+externalDscpNode:
+  host: node-3pl-a-dscp-node-0
+  port: 9944
+externalDscpIpfs:
+  host: ipfs-3pl-a-dscp-ipfs-api
+  port: 5001
+externalDscpIdentity:
+  host: identity-service-3pl-a-dscp-identity-service
+  port: 3000
+authType: EXTERNAL
+node:
+  enabled: false
+postgresql:
+  primary:
+    persistence:
+      storageClass: enc-managed-csi
+      size: 60Gi

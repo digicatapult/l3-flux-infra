@@ -23,5 +23,3 @@ node:
   enableStartupProbe: true
   enableReadinessProbe: true
 storageClass: enc-managed-csi
-image:
-  tag: v8.0.0

@@ -1,0 +1,25 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: matchmaker-service-3pl-a
+  namespace: 3pl-a
+spec:
+  install:
+    remediation:
+      retries: -1
+  dependsOn:
+    - name: node-3pl-a
+    - name: ipfs-3pl-a
+    - name: identity-service-3pl-a
+  chart:
+    spec:
+      chart: dscp-matchmaker-service
+      sourceRef:
+        kind: HelmRepository
+        name: digicatapult
+  valuesFrom:
+  - kind: ConfigMap
+    name: 3pl-a-values
+    valuesKey: values-dscp-matchmaker-service.yaml
+  interval: 10m0s
