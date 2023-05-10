@@ -10,6 +10,9 @@ externalDscpIdentity:
   host: identity-service-3pl-a-dscp-identity-service
   port: 3000
 authType: EXTERNAL
+ingress:
+  ingressClassName: nginx-3pl-a
+  hostname: 3pl-a.dsch-l3.com
 node:
   enabled: false
 postgresql:
