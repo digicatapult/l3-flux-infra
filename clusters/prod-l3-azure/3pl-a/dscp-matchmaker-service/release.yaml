@@ -22,4 +22,8 @@ spec:
   - kind: ConfigMap
     name: 3pl-a-values
     valuesKey: values-dscp-matchmaker-service.yaml
+  - kind: Secret
+    name: 3pl-a-matchmaker-postgres-creds
+    valuesKey: password
+    targetPath: postgresql.auth.password
   interval: 10m0s
