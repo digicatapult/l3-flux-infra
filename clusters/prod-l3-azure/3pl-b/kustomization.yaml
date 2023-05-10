@@ -6,7 +6,6 @@ resources:
   - dscp-node
   - dscp-ipfs
   - dscp-identity-service
-  - dscp-matchmaker-service
   - nginx
   - wasp-open-api
 configMapGenerator:
@@ -15,7 +14,6 @@ configMapGenerator:
       - values-dscp-node.yaml=dscp-node/values.yaml
       - values-dscp-ipfs.yaml=dscp-ipfs/values.yaml
       - values-dscp-identity-service.yaml=dscp-identity-service/values.yaml
-      - values-dscp-matchmaker-service.yaml=dscp-matchmaker-service/values.yaml
       - values-nginx.yaml=nginx/values.yaml
       - values-wasp-open-api.yaml=wasp-open-api/values.yaml
 configurations:
