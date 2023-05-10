@@ -18,6 +18,7 @@ node:
     - "--unsafe-ws-external"
     - "--unsafe-rpc-external"
     - "--prometheus-external"
+    - "--pruning=archive"
   serviceMonitor:
     enabled: true
   enableStartupProbe: true
