@@ -14,7 +14,7 @@ spec:
     - name: identity-service-3pl-a
   chart:
     spec:
-      chart: dscp-matchmaker-service
+      chart: dscp-matchmaker-api
       sourceRef:
         kind: HelmRepository
         name: digicatapult
