@@ -11,7 +11,7 @@ spec:
   dependsOn:
     - name: node-optimiser
     - name: ipfs-optimiser
-    - name: identity-service-optmiser
+    - name: identity-service-optimiser
   chart:
     spec:
       chart: dscp-matchmaker-api
