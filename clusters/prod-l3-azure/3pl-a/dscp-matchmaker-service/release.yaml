@@ -1,0 +1,29 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: matchmaker-service-3pl-a
+  namespace: 3pl-a
+spec:
+  install:
+    remediation:
+      retries: -1
+  dependsOn:
+    - name: node-3pl-a
+    - name: ipfs-3pl-a
+    - name: identity-service-3pl-a
+  chart:
+    spec:
+      chart: dscp-matchmaker-api
+      sourceRef:
+        kind: HelmRepository
+        name: digicatapult
+  valuesFrom:
+  - kind: ConfigMap
+    name: 3pl-a-values
+    valuesKey: values-dscp-matchmaker-service.yaml
+  - kind: Secret
+    name: 3pl-a-matchmaker-postgres-creds
+    valuesKey: password
+    targetPath: postgresql.auth.password
+  interval: 10m0s

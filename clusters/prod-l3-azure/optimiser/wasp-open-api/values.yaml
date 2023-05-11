@@ -1,6 +1,7 @@
 logLevel: debug
 paths:
   - http://identity-service-optimiser-dscp-identity-service:3000/v1/api-docs
+  - http://matchmaker-service-optimiser-dscp-matchmaker-api:3000/api-docs
 baseUrl: https://optimiser.dsch-l3.com/v1/
 openApiTitle: "Optimiser Open API"
 ingress:

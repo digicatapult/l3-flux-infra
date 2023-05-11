@@ -18,10 +18,9 @@ node:
     - "--unsafe-ws-external"
     - "--unsafe-rpc-external"
     - "--prometheus-external"
+    - "--pruning=archive"
   serviceMonitor:
     enabled: true
   enableStartupProbe: true
   enableReadinessProbe: true
 storageClass: enc-managed-csi
-image:
-  tag: v8.0.0
