@@ -25,6 +25,7 @@ ingress:
       - path: /oauth2/sessions/logout
         pathType: Prefix
       - path: /userinfo
+        pathType: Prefix
     enabled: true
   admin:
     className: nginx-ory
