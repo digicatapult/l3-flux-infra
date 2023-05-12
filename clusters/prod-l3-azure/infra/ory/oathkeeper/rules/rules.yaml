@@ -38,25 +38,3 @@ spec:
   authorizer:
     handler: allow
 ---
-apiVersion: oathkeeper.ory.sh/v1alpha1
-kind: Rule
-metadata:
-  name: hydra-admin
-  namespace: ory
-spec:
-  match: 
-    url: https://oauth2.dsch-l3.com/version
-    methods:
-      - GET
-      - POST
-      - PUT
-      - PATCH
-      - DELETE
-  authenticators:
-    - handler: oauth2_client_credentials
-      config:
-        token_url: 'https://oauth2.dsch-l3.com/oauth2/token'
-        required_scope: 
-          - admin
-  authorizer:
-    handler: allow
