@@ -29,10 +29,6 @@ ingress:
     enabled: true
   admin:
     className: nginx-ory
-    annotations:
-      nginx.ingress.kubernetes.io/enable-global-auth: "false"
-      nginx.ingress.kubernetes.io/auth-type: basic
-      nginx.ingress.kubernetes.io/auth-secret: ory/basic-auth
     hosts:
     - host: oauth2.dsch-l3.com
       paths:
