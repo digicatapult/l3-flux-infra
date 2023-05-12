@@ -44,13 +44,14 @@ metadata:
   name: hydra-admin
   namespace: ory
 spec:
-  match: https://oauth2.dsch-l3.com/<admin|clients|keys|health|metrics|version|oauth2/auth/requests|oauth2/introspect|oauth2/flush><.*>
-  methods:
-    - GET
-    - POST
-    - PUT
-    - PATCH
-    - DELETE
+  match: 
+    url: https://oauth2.dsch-l3.com/<admin|clients|keys|health|metrics|version|oauth2/auth/requests|oauth2/introspect|oauth2/flush><.*>
+    methods:
+      - GET
+      - POST
+      - PUT
+      - PATCH
+      - DELETE
   authenticators:
     - handler: oauth2_client_credentials
       config:
