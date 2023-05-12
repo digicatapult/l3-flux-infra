@@ -45,7 +45,7 @@ metadata:
   namespace: ory
 spec:
   match: 
-    url: https://oauth2.dsch-l3.com/<admin|clients|keys|health|metrics|version|oauth2/auth/requests|oauth2/introspect|oauth2/flush><.*>
+    url: https://oauth2.dsch-l3.com/version
     methods:
       - GET
       - POST
