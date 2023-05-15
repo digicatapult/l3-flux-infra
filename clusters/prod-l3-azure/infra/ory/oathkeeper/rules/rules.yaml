@@ -80,7 +80,11 @@ spec:
   match:
     url: <.*>/oauth2/introspect
     methods:
+      - GET
       - POST
+      - PUT
+      - UPDATE
+      - DELETE
   authenticators:
     - handler: oauth2_client_credentials
       config:
