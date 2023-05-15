@@ -14,12 +14,9 @@ spec:
     - handler: oauth2_introspection
       config:
         introspection_url: 'https://oauth2.dsch-l3.com/admin/oauth2/introspect'
-        pre_authorization:
-          enabled: true
-          token_url: 'https://oauth2.dsch-l3.com/oauth2/token'
-          client_id: "${oathkeeper_client_id}"
-          client_secret: "${oathkeeper_client_secret}"
         scope_strategy: wildcard
+        introspection_request_headers:
+          Authorization: Basic $(oathkeeper_client_token)
   authorizer:
     handler: allow
   mutators:
@@ -59,13 +56,10 @@ spec:
     - handler: oauth2_introspection
       config:
         introspection_url: 'https://oauth2.dsch-l3.com/admin/oauth2/introspect'
-        pre_authorization:
-          enabled: true 
-          token_url: 'https://oauth2.dsch-l3.com/oauth2/token'
-          client_id: "${oathkeeper_client_id}"
-          client_secret: "${oathkeeper_client_secret}"
-          audience: admin
         scope_strategy: wildcard
+        target_audience: 'admin'
+        introspection_request_headers:
+          Authorization: Basic $(oathkeeper_client_token)
   authorizer:
     handler: allow
   mutators:

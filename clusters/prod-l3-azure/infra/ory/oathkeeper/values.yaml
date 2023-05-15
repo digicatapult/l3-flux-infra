@@ -41,9 +41,6 @@ oathkeeper:
         enabled: true
         config:
           introspection_url: 'https://oauth2.dsch-l3.com/admin/oauth2/introspect'
-          pre_authorization:
-            enabled: true
-            token_url: 'https://oauth2.dsch-l3.com/oauth2/token'
       noop:
         enabled: true
 ingress:

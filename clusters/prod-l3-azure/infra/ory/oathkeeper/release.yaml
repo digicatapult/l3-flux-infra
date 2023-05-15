@@ -24,11 +24,3 @@ spec:
     - kind: ConfigMap
       name: ory-values
       valuesKey: values-oathkeeper.yaml
-    - kind: Secret
-      name: oathkeeper-client-creds
-      valuesKey: oathkeeper_client_id
-      targetPath: oathkeeper.config.authenticators.oauth2_introspection.config.pre_authorization.client_id
-    - kind: Secret
-      name: oathkeeper-client-creds
-      valuesKey: oathkeeper_client_secret
-      targetPath: oathkeeper.config.authenticators.oauth2_introspection.config.pre_authorization.client_secret
