@@ -25,10 +25,10 @@ spec:
       name: ory-values
       valuesKey: values-oathkeeper.yaml
     - kind: Secret
-      name: ory-oathkeeper-creds
+      name: oathkeeper-client-creds
       valuesKey: oathkeeper_client_id
       targetPath: oathkeeper.config.authenticators.oauth2_introspection.config.pre_authorization.client_id
     - kind: Secret
-      name: ory-oathkeeper-creds
+      name: oathkeeper-client-creds
       valuesKey: oathkeeper_client_secret
       targetPath: oathkeeper.config.authenticators.oauth2_introspection.config.pre_authorization.client_secret
