@@ -57,7 +57,8 @@ spec:
       config:
         introspection_url: 'https://oauth2.dsch-l3.com/admin/oauth2/introspect'
         scope_strategy: wildcard
-        target_audience: 'admin'
+        target_audience: 
+          - admin
         introspection_request_headers:
           Authorization: Basic ${oathkeeper_client_token}
   authorizer:
