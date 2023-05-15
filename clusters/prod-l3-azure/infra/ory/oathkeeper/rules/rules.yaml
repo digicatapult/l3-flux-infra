@@ -48,7 +48,7 @@ spec:
 #   namespace: ory
 # spec:
 #   match:
-#     url: <.*>/<admin|clients|keys|health|metrics|version|oauth2/auth/requests|oauth2/flush><.*>
+#     url: <.*>/<admin(?!/introspect|?!/oauth2/introspect|)|clients|keys|health|metrics|version|oauth2/auth/requests|oauth2/flush><.*>
 #     methods:
 #       - GET
 #       - POST
@@ -78,7 +78,7 @@ metadata:
   namespace: ory
 spec:
   match:
-    url: https://oauth2.dsch-l3.com/<oauth2/introspect|admin/oauth2/introspect>
+    url: <.*>/<oauth2/introspect|admin/oauth2/introspect>
     methods:
       - GET
       - POST
