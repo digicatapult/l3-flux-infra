@@ -16,7 +16,7 @@ spec:
         introspection_url: 'https://oauth2.dsch-l3.com/admin/oauth2/introspect'
         scope_strategy: wildcard
         introspection_request_headers:
-          Authorization: Basic $(oathkeeper_client_token)
+          Authorization: Basic ${oathkeeper_client_token}
   authorizer:
     handler: allow
   mutators:
@@ -59,7 +59,7 @@ spec:
         scope_strategy: wildcard
         target_audience: 'admin'
         introspection_request_headers:
-          Authorization: Basic $(oathkeeper_client_token)
+          Authorization: Basic ${oathkeeper_client_token}
   authorizer:
     handler: allow
   mutators:
