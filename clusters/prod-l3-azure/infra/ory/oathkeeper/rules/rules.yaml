@@ -60,7 +60,7 @@ spec:
       config:
         introspection_url: 'https://oauth2.dsch-l3.com/oauth2/introspect'
         pre_authorization:
-          enabled: true
+          enabled: true 
           token_url: 'https://oauth2.dsch-l3.com/oauth2/token'
           client_id: "${oathkeeper_client_id}"
           client_secret: "${oathkeeper_client_secret}"

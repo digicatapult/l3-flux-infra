@@ -33,8 +33,17 @@ oathkeeper:
     authenticators:
       oauth2_client_credentials:
         enabled: true
+        config:
+          token_url: 'https://oauth2.dsch-l3.com/oauth2/token'
+          required_scope:
+            - admin
       oauth2_introspection:
         enabled: true
+        config:
+          introspection_url: 'https://oauth2.dsch-l3.com/oauth2/introspect'
+          pre_authorization:
+            enabled: true
+            token_url: 'https://oauth2.dsch-l3.com/oauth2/token'
       noop:
         enabled: true
 ingress:
