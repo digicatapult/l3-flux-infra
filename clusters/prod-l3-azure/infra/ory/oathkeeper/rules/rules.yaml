@@ -85,8 +85,6 @@ spec:
     - handler: oauth2_client_credentials
       config:
         token_url: 'https://oauth2.dsch-l3.com/oauth2/token'
-        required_scope:
-          - admin
   authorizer:
     handler: allow
   mutators:
