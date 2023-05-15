@@ -7,6 +7,10 @@ metadata:
 spec:
   interval: 1m
   path: ./clusters/prod-l3-azure/infra/ory/oathkeeper
+  postBuild:
+    substituteFrom:
+      - kind: Secret
+        name: oathkeeper-client-creds
   dependsOn:
     - name: ory-sync
   prune: true
