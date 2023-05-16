@@ -48,5 +48,8 @@ ingress:
     enabled: false
   api:
     enabled: false
-maester:
-  enabled: false
+global:
+  ory:
+    oathkeeper:
+      maester:
+        mode: sidecar
