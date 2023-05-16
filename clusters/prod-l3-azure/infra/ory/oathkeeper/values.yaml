@@ -54,4 +54,4 @@ global:
       maester:
         mode: sidecar
 maester:
-  nameOverride: oathkeeper-maester
+  nameOverride: oathkeeper-oathkeeper-maester
