@@ -46,12 +46,8 @@ print_usage() {
     echo "  -h        Prints this message"
 }
 
-while getopts ":a:p:n:c::i:s:h:u:b:" opt; do
+while getopts ":a:p:n:c:i:s:h:u:b:" opt; do
   case ${opt} in
-    h )
-      print_usage
-      exit 0
-      ;;
     a )
       HYDRA_ADMIN_URL=${OPTARG}
       ;;
@@ -70,6 +66,10 @@ while getopts ":a:p:n:c::i:s:h:u:b:" opt; do
     s )
       CLIENT_SECRET=${OPTARG}
       ;;
+    h )
+      print_usage
+      exit 0
+      ;;
     u )
       HYDRA_AUDIENCES=${OPTARG}
       ;;
@@ -77,8 +77,8 @@ while getopts ":a:p:n:c::i:s:h:u:b:" opt; do
       HYDRA_AUTHENTICATION_HEADER=${OPTARG}
       ;;
    \? )
-     echo "Invalid Option: -$OPTARG" 1>&2
-     echo "\n"
+     echo "Invalid Option: $OPTARG" 1>&2
+     printf ""
      print_usage
      exit 1
      ;;
