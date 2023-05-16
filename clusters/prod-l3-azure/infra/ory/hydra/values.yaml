@@ -4,24 +4,51 @@ ingress:
   public:
     className: nginx-ory
     annotations:
-      nginx.ingress.kubernetes.io/rewrite-target: /$1
-      nginx.ingress.kubernetes.io/use-regex: "true"
       nginx.ingress.kubernetes.io/enable-global-auth: "false"
     hosts:
     - host: oauth2.dsch-l3.com
       paths:
-      - path: "/public/(.*)"
+      - path: /.well-known/jwks.json
+        pathType: Exact
+      - path: /.well-known/openid-configuration
+        pathType: Prefix
+      - path: /oauth2/auth
+        pathType: Prefix
+      - path: /oauth2/token
+        pathType: Prefix
+      - path: /oauth2/revoke
+        pathType: Prefix
+      - path: /oauth2/fallbacks/consent
+        pathType: Prefix
+      - path: /oauth2/fallbacks/error
+        pathType: Prefix
+      - path: /oauth2/sessions/logout
+        pathType: Prefix
+      - path: /userinfo
         pathType: Prefix
     enabled: true
   admin:
     className: nginx-ory
-    annotations:
-      nginx.ingress.kubernetes.io/rewrite-target: /$1
-      nginx.ingress.kubernetes.io/use-regex: "true"
     hosts:
     - host: oauth2.dsch-l3.com
       paths:
-      - path: "/admin/(.*)"
+      - path: /admin
+        pathType: Prefix
+      - path: /clients
+        pathType: Prefix
+      - path: /keys
+        pathType: Prefix
+      - path: /health
+        pathType: Prefix
+      - path: /metrics
+        pathType: Prefix
+      - path: /version
+        pathType: Prefix
+      - path: /oauth2/auth/requests
+        pathType: Prefix
+      - path: /oauth2/introspect
+        pathType: Prefix
+      - path: "/oauth2/flush"
         pathType: Prefix
     enabled: true
 maester:
@@ -36,9 +63,9 @@ hydra:
       id_token: 168h
     urls:
       self:
-        admin: https://oauth2.dsch-l3.com/admin/
-        issuer: https://oauth2.dsch-l3.com/public/
-        public: https://oauth2.dsch-l3.com/public/
-      consent: https://oauth2.dsch-l3.com/consent/
-      login: https://oauth2.dsch-l3.com/login/
-      logout: https://oauth2.dsch-l3.com/logout/
+        admin: https://oauth2.dsch-l3.com/
+        issuer: https://oauth2.dsch-l3.com/
+        public: https://oauth2.dsch-l3.com/
+      consent: https://oauth2.dsch-l3.com/
+      login: https://oauth2.dsch-l3.com/
+      logout: https://oauth2.dsch-l3.com/

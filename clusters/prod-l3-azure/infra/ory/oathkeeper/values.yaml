@@ -31,11 +31,14 @@ oathkeeper:
       deny:
         enabled: true
     authenticators:
+      oauth2_client_credentials:
+        enabled: true
+        config:
+          token_url: 'https://oauth2.dsch-l3.com/oauth2/token'
       oauth2_introspection:
         enabled: true
         config:
-          introspection_url: 'http://hydra-admin:4445/oauth2/introspect'
-          scope_strategy: wildcard
+          introspection_url: 'https://oauth2.dsch-l3.com/admin/oauth2/introspect'
       noop:
         enabled: true
 ingress:

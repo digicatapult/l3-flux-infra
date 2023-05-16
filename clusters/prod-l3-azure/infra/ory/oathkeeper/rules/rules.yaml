@@ -1,11 +1,11 @@
 apiVersion: oathkeeper.ory.sh/v1alpha1
 kind: Rule
 metadata:
-  name: oathkeeper-authenticated-paths
+  name: dscp-authenticated-paths
   namespace: ory
 spec:
   match:
-    url: <.*>/<v1|admin>/<(?!swagger|api-docs).*>
+    url: <.*>/<v1>/<(?!swagger|api-docs).*>
     methods:
       - GET
       - POST
@@ -13,10 +13,10 @@ spec:
   authenticators:
     - handler: oauth2_introspection
       config:
-        introspection_url: 'http://hydra-admin:4445/oauth2/introspect'
+        introspection_url: 'https://oauth2.dsch-l3.com/admin/oauth2/introspect'
         scope_strategy: wildcard
-        cache:
-          enabled: false
+        introspection_request_headers:
+          Authorization: Basic ${oathkeeper_client_token}
   authorizer:
     handler: allow
   mutators:
@@ -25,7 +25,7 @@ spec:
 apiVersion: oathkeeper.ory.sh/v1alpha1
 kind: Rule
 metadata:
-  name: oathkeeper-unauthenticated-paths
+  name: dscp-unauthenticated-paths
   namespace: ory
 spec:
   match:
@@ -37,3 +37,54 @@ spec:
     - handler: noop
   authorizer:
     handler: allow
+---
+apiVersion: oathkeeper.ory.sh/v1alpha1
+kind: Rule
+metadata:
+  name: hydra-admin-authenticated-paths
+  namespace: ory
+spec:
+  match:
+    url: <.*>/<admin(?!/oauth2/introspect)|clients|keys|health|metrics|version|oauth2/auth/requests|oauth2/flush><.*>
+    methods:
+      - GET
+      - POST
+      - PUT
+      - UPDATE
+      - DELETE
+  authenticators:
+    - handler: oauth2_introspection
+      config:
+        introspection_url: 'https://oauth2.dsch-l3.com/admin/oauth2/introspect'
+        scope_strategy: wildcard
+        target_audience: 
+          - admin
+        introspection_request_headers:
+          Authorization: Basic ${oathkeeper_client_token}
+  authorizer:
+    handler: allow
+  mutators:
+    - handler: noop
+---
+apiVersion: oathkeeper.ory.sh/v1alpha1
+kind: Rule
+metadata:
+  name: hydra-admin-introspection-path
+  namespace: ory
+spec:
+  match:
+    url: <.*>/<oauth2/introspect|admin/oauth2/introspect>
+    methods:
+      - GET
+      - POST
+      - PUT
+      - UPDATE
+      - DELETE
+  authenticators:
+    - handler: oauth2_client_credentials
+      config:
+        token_url: 'https://oauth2.dsch-l3.com/oauth2/token'
+  authorizer:
+    handler: allow
+  mutators:
+    - handler: noop

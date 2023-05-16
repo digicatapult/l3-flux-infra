@@ -14,6 +14,8 @@ CLIENT_NAME=l3-client-id
 CLIENT_SECRET=l3-client-secret
 CONTEXT_NAME=kind-l3-flux-infra
 NAMESPACE=ory
+HYDRA_AUDIENCES=offline_access,offline,openid
+HYDRA_AUTHENTICATION_HEADER='none: none'
 
 print_usage() {
     echo "Retrieve an OAuth2 token from Ory Hydra"
@@ -34,17 +36,18 @@ print_usage() {
     echo "            (default: l3-client-id)"
     echo "  -s        Specify an alternative alternative client-secret to use for hydra"
     echo "            (default: l3-client-secret)"
+    echo "  -u        A comma seperated list of audiences to set when creating the client"
+    echo "            (default: offline_access,offline,openid)"
+    echo "  -b        Specify a header to use when authenticating to Hydra, format should be"
+    echo "            'Authorization: Bearer <token>'"
+    echo "            (default: 'none: none')"
     echo ""
     echo "Flags: "
     echo "  -h        Prints this message"
 }
 
-while getopts ":a:p:n:c::i:s:h" opt; do
+while getopts ":a:p:n:c:i:s:h:u:b:" opt; do
   case ${opt} in
-    h )
-      print_usage
-      exit 0
-      ;;
     a )
       HYDRA_ADMIN_URL=${OPTARG}
       ;;
@@ -63,9 +66,19 @@ while getopts ":a:p:n:c::i:s:h" opt; do
     s )
       CLIENT_SECRET=${OPTARG}
       ;;
+    h )
+      print_usage
+      exit 0
+      ;;
+    u )
+      HYDRA_AUDIENCES=${OPTARG}
+      ;;
+    b )
+      HYDRA_AUTHENTICATION_HEADER=${OPTARG}
+      ;;
    \? )
-     echo "Invalid Option: -$OPTARG" 1>&2
-     echo "\n"
+     echo "Invalid Option: $OPTARG" 1>&2
+     printf ""
      print_usage
      exit 1
      ;;
@@ -124,8 +137,17 @@ create_hydra_client() {
     local hydra_admin_url=$1
     local client_name=$2
     local client_secret=$3
+    local hydra_audiences=$4
+    local hydra_authentication_header=$5
     printf "Creating a hydra oauth2 client...\n"
-    client_id=$(hydra create oauth2-client --endpoint $hydra_admin_url --name "$client_name" --grant-type client_credentials --secret $client_secret --format json| jq -r '.client_id')
+    client_id=$(hydra create oauth2-client \
+    --endpoint $hydra_admin_url \
+    --name "$client_name" \
+    --grant-type client_credentials \
+    --secret $client_secret \
+    --audience $hydra_audiences \
+    --http-header "$hydra_authentication_header" \
+    --format json| jq -r '.client_id')
     local ret=$?
     if [ "$ret" -eq 0 ]; then
         printf "Ok\nClient $client_name successfully created with id: $client_id\n"
@@ -139,8 +161,9 @@ create_hydra_client() {
 retrieve_hydra_token() {
     local hydra_public_url=$1
     local client_secret=$2
+    local hydra_audiences=$3
     printf "Creating a hydra OAuth2 token which will be valid for 7 days...\n"
-    hydra perform client-credentials --endpoint $hydra_public_url --client-id $client_id --client-secret $client_secret --format json-pretty
+    hydra perform client-credentials --endpoint $hydra_public_url --client-id $client_id --client-secret $client_secret --audience $hydra_audiences --format json-pretty
     local ret=$?
     if [ "$ret" -eq 0 ]; then
         exit 0
@@ -154,5 +177,5 @@ assert_command kubectl
 assert_command hydra
 assert_command jq
 assert_env $CONTEXT_NAME $NAMESPACE
-create_hydra_client $HYDRA_ADMIN_URL $CLIENT_NAME $CLIENT_SECRET
-retrieve_hydra_token $HYDRA_PUBLIC_URL $CLIENT_SECRET
+create_hydra_client $HYDRA_ADMIN_URL $CLIENT_NAME $CLIENT_SECRET $HYDRA_AUDIENCES "$HYDRA_AUTHENTICATION_HEADER"
+retrieve_hydra_token $HYDRA_PUBLIC_URL $CLIENT_SECRET $HYDRA_AUDIENCES
