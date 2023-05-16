@@ -35,8 +35,6 @@ oathkeeper:
         enabled: true
         config:
           token_url: 'https://oauth2.dsch-l3.com/oauth2/token'
-          required_scope:
-            - admin
       oauth2_introspection:
         enabled: true
         config:
