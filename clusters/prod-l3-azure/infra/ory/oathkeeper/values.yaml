@@ -48,10 +48,5 @@ ingress:
     enabled: false
   api:
     enabled: false
-global:
-  ory:
-    oathkeeper:
-      maester:
-        mode: sidecar
 maester:
-  nameOverride: oathkeeper-oathkeeper-maester
+  enabled: false

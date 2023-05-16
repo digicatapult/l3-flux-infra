@@ -3,6 +3,7 @@ kind: Kustomization
 namespace: ory
 resources:
   - hydra
+  - oathkeeper-maester
   - postgresql
   - nginx
   - source.yaml
