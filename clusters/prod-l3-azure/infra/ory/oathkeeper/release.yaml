@@ -16,6 +16,8 @@ spec:
         kind: HelmRepository
         name: ory
   interval: 1m0s
+  dependsOn:
+    - name: oathkeeper-maester
   # Default values
   # https://github.com/ory/k8s/blob/master/helm/charts/hydra/values.yaml
   valuesFrom:
