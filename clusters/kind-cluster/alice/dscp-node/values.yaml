@@ -17,4 +17,4 @@ node:
     - "--prometheus-external"
 storageClass: standard
 image:
-  tag: v4.6.0
+  tag: v9.0.0
