@@ -2,22 +2,22 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: bob-identity-service
-  namespace: bob
+  name: alice-identity-service
+  namespace: alice
 spec:
   install:
     remediation:
       retries: -1
   dependsOn:
-    - name: bob-node
+    - name: alice-node
   chart:
     spec:
-      chart: dscp-identity-service
+      chart: sqnc-identity-service
       sourceRef:
         kind: HelmRepository
         name: digicatapult
   valuesFrom:
   - kind: ConfigMap
-    name: bob-values
-    valuesKey: values-dscp-identity-service.yaml
+    name: alice-values
+    valuesKey: values-sqnc-identity-service.yaml
   interval: 10m0s

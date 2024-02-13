@@ -1,7 +1,7 @@
 apiVersion: oathkeeper.ory.sh/v1alpha1
 kind: Rule
 metadata:
-  name: dscp-authenticated-paths
+  name: sqnc-authenticated-paths
   namespace: ory
 spec:
   match:
@@ -25,7 +25,7 @@ spec:
 apiVersion: oathkeeper.ory.sh/v1alpha1
 kind: Rule
 metadata:
-  name: dscp-unauthenticated-paths
+  name: sqnc-unauthenticated-paths
   namespace: ory
 spec:
   match:

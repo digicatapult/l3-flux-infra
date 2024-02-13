@@ -12,12 +12,12 @@ spec:
     - name: node-optimiser
   chart:
     spec:
-      chart: dscp-identity-service
+      chart: sqnc-identity-service
       sourceRef:
         kind: HelmRepository
         name: digicatapult
   valuesFrom:
   - kind: ConfigMap
     name: optimiser-values
-    valuesKey: values-dscp-identity-service.yaml
+    valuesKey: values-sqnc-identity-service.yaml
   interval: 10m0s

@@ -1,7 +1,7 @@
 logLevel: trace
 selfAddress: 5E1qGsfiQo62EYYKo86Lf9sALgcWN8jJJvnywaY3eNrkTaut
 externalDscpNode:
-  host: node-3pl-a-dscp-node-0
+  host: node-3pl-a-sqnc-node-0
   port: 9944
 authType: EXTERNAL
 ingress:

@@ -2,20 +2,22 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: bob-node
-  namespace: bob
+  name: alice-sqnc-api
+  namespace: alice
 spec:
   install:
     remediation:
       retries: -1
+  dependsOn: 
+    - name: alice-ipfs
   chart:
     spec:
-      chart: dscp-node
+      chart: sqnc-api
       sourceRef:
         kind: HelmRepository
         name: digicatapult
   valuesFrom:
   - kind: ConfigMap
-    name: bob-values
-    valuesKey: values-dscp-node.yaml
-  interval: 10m
+    name: alice-values
+    valuesKey: values-sqnc-api.yaml
+  interval: 10m0s

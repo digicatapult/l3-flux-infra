@@ -1,13 +1,13 @@
 logLevel: debug
 userUri: 5H9KATdvPSzdw5oCkXD2HoJ3Qx9voD5eRsmME33HMmeWPsVa
 externalDscpNode:
-  host: node-3pl-b-dscp-node-0
+  host: node-3pl-b-sqnc-node-0
   port: 9944
 externalDscpIpfs:
-  host: ipfs-3pl-b-dscp-ipfs-api
+  host: ipfs-3pl-b-sqnc-ipfs-api
   port: 5001
 externalDscpIdentity:
-  host: identity-service-3pl-b-dscp-identity-service
+  host: identity-service-3pl-b-sqnc-identity-service
   port: 3000
 authType: EXTERNAL
 ingress:

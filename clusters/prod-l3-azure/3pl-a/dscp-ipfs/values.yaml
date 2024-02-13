@@ -1,8 +1,8 @@
 externalDscpNode:
-  host: node-3pl-a-dscp-node-0
+  host: node-3pl-a-sqnc-node-0
   port: 9944
 persistence:
   storageClass: enc-managed-csi
   size: 60Gi
-dscpNode:
+sqncNode:
   enabled: false

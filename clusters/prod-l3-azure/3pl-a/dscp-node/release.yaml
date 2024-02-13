@@ -10,7 +10,7 @@ spec:
       retries: -1
   chart:
     spec:
-      chart: dscp-node
+      chart: sqnc-node
       version: '5.0.0'
       sourceRef:
         kind: HelmRepository
@@ -18,7 +18,7 @@ spec:
   valuesFrom:
   - kind: ConfigMap
     name: 3pl-a-values
-    valuesKey: values-dscp-node.yaml
+    valuesKey: values-sqnc-node.yaml
   - kind: Secret
     name: red-keys
     valuesKey: node_id

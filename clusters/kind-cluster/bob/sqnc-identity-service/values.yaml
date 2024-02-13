@@ -1,15 +1,15 @@
 logLevel: info
 selfAddress: 12D3KooWHdiAxVd8uMQR1hGWXccidmfCwLqcMpGwR6QcTP6QRMuD
 externalDscpNode:
-  host: bob-node-dscp-node-0
+  host: bob-node-sqnc-node-0
   port: 9944
 externalOrigin: "http://localhost:3080"
-externalPathPrefix: "bob/dscp-identity-service"
+externalPathPrefix: "bob/sqnc-identity-service"
 authType: EXTERNAL
 ingress:
   hostname: localhost
   paths:
-    - path: "/bob/dscp-identity-service/(.*)"
+    - path: "/bob/sqnc-identity-service/(.*)"
       pathType: Prefix
 node:
   enabled: false

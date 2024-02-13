@@ -2,7 +2,7 @@ node:
   chain: local
   role: validator
   dataVolumeSize: 1Gi
-  customNodeKey: "0000000000000000000000000000000000000000000000000000000000000002"
+  customNodeKey: "0000000000000000000000000000000000000000000000000000000000000003"
   perNodeServices:
     setPublicAddressToExternal:
       enabled: false
@@ -13,9 +13,9 @@ node:
     - "--rpc-cors=all"
     - "--unsafe-ws-external"
     - "--unsafe-rpc-external"
-    - "--bob"
+    - "--charlie"
     - "--prometheus-external"
-    - "--bootnodes '/dns4/alice-node-dscp-node-0-rc-p2p.alice.svc.cluster.local/tcp/30333/p2p/12D3KooWEyoppNCUx8Yx66oV9fJnriXwCcXwDDUA2kj6vnc6iDEp'"
+    - "--bootnodes '/dns4/alice-node-sqnc-node-0-rc-p2p.alice.svc.cluster.local/tcp/30333/p2p/12D3KooWEyoppNCUx8Yx66oV9fJnriXwCcXwDDUA2kj6vnc6iDEp'"
 storageClass: standard
 image:
   tag: v9.0.0

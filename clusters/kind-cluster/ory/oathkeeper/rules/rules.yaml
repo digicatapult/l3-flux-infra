@@ -5,7 +5,7 @@ metadata:
   namespace: ory
 spec:
   match:
-    url: <.*>/<alice|bob|charlie>/<dscp-api|dscp-identity-service>/<v1|v3>/<(?!swagger|api-docs).*>
+    url: <.*>/<alice|bob|charlie>/<sqnc-api|sqnc-identity-service>/<v1|v3>/<(?!swagger|api-docs).*>
     methods:
       - GET
       - POST

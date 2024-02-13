@@ -1,10 +1,10 @@
 externalDscpNode:
-  host: node-3pl-b-dscp-node-0
+  host: node-3pl-b-sqnc-node-0
   port: 9944
 ipfs:
-  bootNodeAddress: /dns4/ipfs-3pl-a-dscp-ipfs-0-swarm.3pl-a.svc.cluster.local/tcp/4001/p2p/12D3KooWQ3w779e9kUaW5QnVyJreVPoK1Hzq3oYgQpFxt4qAEZe1
+  bootNodeAddress: /dns4/ipfs-3pl-a-sqnc-ipfs-0-swarm.3pl-a.svc.cluster.local/tcp/4001/p2p/12D3KooWQ3w779e9kUaW5QnVyJreVPoK1Hzq3oYgQpFxt4qAEZe1
 persistence:
   storageClass: enc-managed-csi
   size: 60Gi
-dscpNode:
+sqncNode:
   enabled: false

@@ -1,13 +1,13 @@
 logLevel: debug
 userUri: 5GuU4dtu3d9nox95eU9B7jErvGpHD9Bq16VBJnVN3KKBBXZg
 externalDscpNode:
-  host: node-optimiser-dscp-node-0
+  host: node-optimiser-sqnc-node-0
   port: 9944
 externalDscpIpfs:
-  host: ipfs-optimiser-dscp-ipfs-api
+  host: ipfs-optimiser-sqnc-ipfs-api
   port: 5001
 externalDscpIdentity:
-  host: identity-service-optimiser-dscp-identity-service
+  host: identity-service-optimiser-sqnc-identity-service
   port: 3000
 authType: EXTERNAL
 ingress:

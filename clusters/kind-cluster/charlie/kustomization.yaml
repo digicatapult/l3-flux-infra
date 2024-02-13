@@ -3,17 +3,17 @@ kind: Kustomization
 namespace: charlie
 resources:
   - source.yaml
-  - dscp-node
-  - dscp-identity-service
+  - sqnc-node
+  - sqnc-identity-service
   - ipfs-node
-  - dscp-api
+  - sqnc-api
 configMapGenerator:
   - name: charlie-values
     files:
-      - values-dscp-node.yaml=dscp-node/values.yaml
-      - values-dscp-ipfs.yaml=ipfs-node/values.yaml
-      - values-dscp-api.yaml=dscp-api/values.yaml
-      - values-dscp-identity-service.yaml=dscp-identity-service/values.yaml
+      - values-sqnc-node.yaml=sqnc-node/values.yaml
+      - values-sqnc-ipfs.yaml=ipfs-node/values.yaml
+      - values-sqnc-api.yaml=sqnc-api/values.yaml
+      - values-sqnc-identity-service.yaml=sqnc-identity-service/values.yaml
 configurations:
   - kustomize-config.yaml
 generatorOptions:

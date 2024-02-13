@@ -2,20 +2,22 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: charlie-node
+  name: charlie-sqnc-api
   namespace: charlie
 spec:
   install:
     remediation:
       retries: -1
+  dependsOn:
+    - name: charlie-ipfs
   chart:
     spec:
-      chart: dscp-node
+      chart: sqnc-api
       sourceRef:
         kind: HelmRepository
         name: digicatapult
   valuesFrom:
   - kind: ConfigMap
     name: charlie-values
-    valuesKey: values-dscp-node.yaml
-  interval: 10m
+    valuesKey: values-sqnc-api.yaml
+  interval: 10m0s
