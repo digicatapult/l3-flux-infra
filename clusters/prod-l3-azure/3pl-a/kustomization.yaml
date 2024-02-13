@@ -3,19 +3,19 @@ kind: Kustomization
 namespace: 3pl-a
 resources:
   - source.yaml
-  - dscp-node
-  - dscp-ipfs
-  - dscp-identity-service
-  - dscp-matchmaker-service
+  - sqnc-node
+  - sqnc-ipfs
+  - sqnc-identity-service
+  - sqnc-matchmaker-service
   - nginx
   - wasp-open-api
 configMapGenerator:
   - name: 3pl-a-values
     files:
-      - values-dscp-node.yaml=dscp-node/values.yaml
-      - values-dscp-ipfs.yaml=dscp-ipfs/values.yaml
-      - values-dscp-identity-service.yaml=dscp-identity-service/values.yaml
-      - values-dscp-matchmaker-service.yaml=dscp-matchmaker-service/values.yaml
+      - values-sqnc-node.yaml=sqnc-node/values.yaml
+      - values-sqnc-ipfs.yaml=sqnc-ipfs/values.yaml
+      - values-sqnc-identity-service.yaml=sqnc-identity-service/values.yaml
+      - values-sqnc-matchmaker-service.yaml=sqnc-matchmaker-service/values.yaml
       - values-nginx.yaml=nginx/values.yaml
       - values-wasp-open-api.yaml=wasp-open-api/values.yaml
 configurations:

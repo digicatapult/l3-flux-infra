@@ -1,17 +1,17 @@
 config:
   logLevel: info
-  externalNodeHost: alice-node-dscp-node-0
-  externalIpfsHost: alice-ipfs-dscp-ipfs-api
+  externalNodeHost: alice-node-sqnc-node-0
+  externalIpfsHost: alice-ipfs-sqnc-ipfs-api
   externalIpfsPort: 5001
   accountKey: //Alice
   externalOrigin: "http://localhost:3080"
-  externalPathPrefix: "alice/dscp-api"
+  externalPathPrefix: "alice/sqnc-api"
   auth:
     type: EXTERNAL
 ingress:
   host: localhost
   paths:
-    - "/alice/dscp-api/(.*)"
+    - "/alice/sqnc-api/(.*)"
   annotations:
     nginx.ingress.kubernetes.io/use-regex: "true"
 ipfs:

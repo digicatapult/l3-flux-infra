@@ -14,14 +14,14 @@ spec:
     - name: identity-service-3pl-a
   chart:
     spec:
-      chart: dscp-matchmaker-api
+      chart: sqnc-matchmaker-api
       sourceRef:
         kind: HelmRepository
         name: digicatapult
   valuesFrom:
   - kind: ConfigMap
     name: 3pl-a-values
-    valuesKey: values-dscp-matchmaker-service.yaml
+    valuesKey: values-sqnc-matchmaker-service.yaml
   - kind: Secret
     name: 3pl-a-matchmaker-postgres-creds
     valuesKey: password

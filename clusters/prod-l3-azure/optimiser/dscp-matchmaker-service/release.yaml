@@ -14,14 +14,14 @@ spec:
     - name: identity-service-optimiser
   chart:
     spec:
-      chart: dscp-matchmaker-api
+      chart: sqnc-matchmaker-api
       sourceRef:
         kind: HelmRepository
         name: digicatapult
   valuesFrom:
   - kind: ConfigMap
     name: optimiser-values
-    valuesKey: values-dscp-matchmaker-service.yaml
+    valuesKey: values-sqnc-matchmaker-service.yaml
   - kind: Secret
     name: optimiser-matchmaker-postgres-creds
     valuesKey: password

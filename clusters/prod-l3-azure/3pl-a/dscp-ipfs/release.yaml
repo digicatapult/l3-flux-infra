@@ -12,14 +12,14 @@ spec:
     - name: node-3pl-a
   chart:
     spec:
-      chart: dscp-ipfs
+      chart: sqnc-ipfs
       sourceRef:
         kind: HelmRepository
         name: digicatapult
   valuesFrom:
   - kind: ConfigMap
     name: 3pl-a-values
-    valuesKey: values-dscp-ipfs.yaml
+    valuesKey: values-sqnc-ipfs.yaml
   - kind: Secret
     name: 3pl-a-ipfs
     valuesKey: publicKey

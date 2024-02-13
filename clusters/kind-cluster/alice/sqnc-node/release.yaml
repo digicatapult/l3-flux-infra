@@ -10,12 +10,12 @@ spec:
       retries: -1
   chart:
     spec:
-      chart: dscp-node
+      chart: sqnc-node
       sourceRef:
         kind: HelmRepository
         name: digicatapult
   valuesFrom:
   - kind: ConfigMap
     name: alice-values
-    valuesKey: values-dscp-node.yaml
+    valuesKey: values-sqnc-node.yaml
   interval: 10m

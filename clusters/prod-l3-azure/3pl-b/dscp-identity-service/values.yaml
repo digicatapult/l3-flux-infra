@@ -1,7 +1,7 @@
 logLevel: info
 selfAddress: 5H9KATdvPSzdw5oCkXD2HoJ3Qx9voD5eRsmME33HMmeWPsVa
 externalDscpNode:
-  host: node-3pl-b-dscp-node-0
+  host: node-3pl-b-sqnc-node-0
   port: 9944
 authType: EXTERNAL
 ingress:

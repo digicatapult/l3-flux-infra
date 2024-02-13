@@ -18,7 +18,7 @@ print_usage() {
 
 FORCE_RECREATE=
 NAMESPACE="l3"
-CONTAINER="digicatapult/dscp-node:latest"
+CONTAINER="digicatapult/sqnc-node:latest"
 while getopts ":n:c:fh" opt; do
   case ${opt} in
     h )
