@@ -1,5 +1,7 @@
 # L3 Flux Infra
 
+# DEPRECATED 27/02/24
+
 Work in progress flux repo to bring up a L3 kubernetes chain.
 
 ## Getting started
